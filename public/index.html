@@ -35,4 +35,35 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+
+  <script>
+    obj1 = document.getElementsByClassName("table1");
+    obj2 = document.getElementsByClassName("table2");
+
+    parent = document.getElementsByClassName("container");
+    
+    obj1.parentNode = parent;
+    obj2.parentNode = parent;
+    
+    function doSwap() {
+      swapElements(document.getElementsByClassName("table1"), document.getElementsByClassName("table2"));
+    }
+
+    function swapElements(obj1, obj2) {
+    
+    // create marker element and insert it where obj1 is
+    var temp = document.createElement("div");
+    obj1.parentNode.insertBefore(temp, obj1);
+
+    // move obj1 to right before obj2
+    obj2.parentNode.insertBefore(obj1, obj2);
+
+    // move obj2 to right before where obj1 used to be
+    temp.parentNode.insertBefore(obj2, temp);
+
+    // remove temporary marker node
+    temp.parentNode.removeChild(temp);
+}
+
+  </script>
 </html>
