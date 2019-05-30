@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+
+body {
+  background-color:rgb(28,39,47);
+  color: aliceblue;
+  font-family: 'Roboto Condensed'
+}
+
+.wrapper {
+  text-align: center;
+  margin: 10%;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.table-wrapper {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 10px;
+  border: 1px solid white;
+}
+table {
+  width: 90%;
+  margin: auto;
+}
+.buy table td.last {
+  color: green;
+}
+
+.sell table td.last {
+  color: red;
+}
+
+.switch {
+  background-color: rgb(34,30,50);
+  border: 1px solid black;
+  color: white;
+  margin: 20px;
+  font-size: 20px;
+}

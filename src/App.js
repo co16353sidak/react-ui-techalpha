@@ -11,11 +11,19 @@ function TableRow(props) {
   )
 }
 
-function Table(props) {
+class Table extends React.Component {
+  constructor(props) {
+    super(props)
+    this.class;
+    this.name;
+    this.total;
+  }
+
+  render() {
     return (
-      <div className = { props.class }>
-        <h1> {props.name} </h1>
-        <h3>Total = {props.total}</h3>
+      <div className = { this.class }>
+        <h1> { this.name } </h1>
+        <h3>Total = { this.total }</h3>
         <table>
           <thead>
             <tr>
@@ -33,6 +41,7 @@ function Table(props) {
         </table>
       </div>
     );
+  }
 }
 
 class App extends React.Component {
