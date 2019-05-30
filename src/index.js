@@ -42,7 +42,8 @@ function TableRow() {
       super(props);
       this.state = {
         name: ["Buying BTC", "Selling BTC"],
-        total: ["25000 AUD", "0.01555923 BTC"]
+        total: ["25000 AUD", "0.01555923 BTC"],
+        class: ["buy", "sell"]
       };
       this.swap = this.swap.bind(this);
     }
@@ -50,7 +51,8 @@ function TableRow() {
     swap() {
         this.setState({
             name: [this.state.name[1], this.state.name[0]],
-            total: [this.state.total[1], this.state.total[0]]
+            total: [this.state.total[1], this.state.total[0]],
+            class: [this.state.class[1], this.state.class[0]]
             });
     }
     render() {
@@ -59,10 +61,10 @@ function TableRow() {
         <div className="wrapper">
           <div className="container">
             <div id="table1" className="table1">
-              <Table name={this.state.name[0]} total={this.state.total[0]} class="buy" />
+              <Table name={this.state.name[0]} total={this.state.total[0]} class={this.state.class[0]} />
             </div>
             <div className="table2">
-              <Table name={this.state.name[1]} total={this.state.total[1]} class="sell" />
+              <Table name={this.state.name[1]} total={this.state.total[1]} class={this.state.class[1]} />
             </div>
           </div>
           <button className="switch" onClick={this.swap} >
@@ -81,4 +83,4 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();
